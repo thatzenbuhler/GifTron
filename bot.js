@@ -40,8 +40,10 @@ client.on('message', msg => {
     if (args.length == 2 && args[0] == '!gif') {
         const gifs = searchGifs(args[1]);
         const rnd = getRandomInt(0, gifListSize)
-        gifs.then(() => {
-            console.log(gifs);
+        gifs.then((data) => {
+            console.log(data[rnd]);
+        }).catch(any => {
+            console.log('Promise rejected: ' + any);
         })
     }
 });
