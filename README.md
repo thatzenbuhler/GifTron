@@ -19,4 +19,5 @@ In order for this bot to work, you must create a file in the same directory call
 ```
 
 ### Functionality
-Currently pending. The current plan is to allow one word search queries and possibly add multi-word queries later.
+Currently works by pasting the gif URL into the channel, which should create a live preview.
+Only works with one-word queries currently.

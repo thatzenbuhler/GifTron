@@ -41,7 +41,10 @@ client.on('message', msg => {
         const gifs = searchGifs(args[1]);
         const rnd = getRandomInt(0, gifListSize)
         gifs.then((data) => {
-            console.log(data[rnd]);
+            const gif = data[rnd];
+            //console.log(gif);
+            console.log(gif['url']);
+            msg.channel.send(gif['url']);
         }).catch(any => {
             console.log('Promise rejected: ' + any);
         })
