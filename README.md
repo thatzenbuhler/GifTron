@@ -4,7 +4,7 @@ Welcome to GifTron, a simple Discord bot that can react in gifs to a simple comm
 following command into the chat when the bot is running in your server:
 
 ```
-!gif "search query>"
+!gif <search_query>
 ```
 
 The bot will then react to the query with a randomly chosen gif from the search results.
