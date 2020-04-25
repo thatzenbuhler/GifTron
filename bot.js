@@ -7,7 +7,7 @@ const client = new Discord.Client();
 const auth = require('./auth.json');
 const axios = require('axios');
 
-const gifListSize = 25;
+const gifListSize = 50;
 
 function getRandomInt(min, max) { // Min inclusive, max exclusive
     min = Math.ceil(min);
@@ -26,6 +26,8 @@ async function searchGifs(searchTerm) {
             offset: 0,
             rating: 'R'
         }
+    }).catch( (response) => {
+        console.log(response);
     });
     return res.data.data;
 }
@@ -43,9 +45,9 @@ client.on('message', msg => {
         gifs.then((data) => {
             const gif = data[rnd];
             //console.log(gif);
-            console.log(gif['url']);
+            console.log('Found gif: ' + gif['url']);
             msg.channel.send(gif['url']);
-        }).catch(any => {
+        }).catch( (any) => {
             console.log('Promise rejected: ' + any);
         })
     }
